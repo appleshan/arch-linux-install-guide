@@ -494,14 +494,16 @@ $ <b>sudo pacman -S nm-connection-editor networkmanager-openvpn</b>
 </pre>
 </dd></dl>
 
-16. [Optional] Install vulkan drivers:
+16. Install Vulkan and OpenGL drivers:
 
 <dl><dd>
 <pre>
-$ <b>pacman -S mesa vulkan-intel</b>   <i># only for systems with Intel graphics</i>
-$ <b>pacman -S nvidia-utils</b>        <i># only for systems with Nvidia graphics</i>
-$ <b>pacman -S amdvlk</b>              <i># only for systems with AMD graphics</i>
+$ <b>pacman -S mesa vulkan-intel lib32-mesa lib32-vulkan-intel vulkan-tools mesa-utils</b>
 </pre>
+</dd></dl>
+
+<dl><dd>
+<b>&#128161; IMPORTANT NOTE</b>: you might need to enable DRI3 in Xorg settings
 </dd></dl>
 
 17. Reboot to finalize installation:
