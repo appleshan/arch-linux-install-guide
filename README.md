@@ -1143,3 +1143,9 @@ venv = ".venv"
 ```
 poetry config virtualenvs.in-project true
 ```
+
+### Playbook 12: Fix laptop freeze after USB/C plug/unplug
+
+1. Add `usbcore.autosuspend=-1 pcie_aspm=off i915.enable_psr=0` to `GRUB_CMDLINE_LINUX_DEFAULT` in `/etc/default/grub`
+2. `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+3. `reboot`
