@@ -101,7 +101,15 @@ $ <b>ping 1.1.1.1</b>
 </pre>
 </dd></dl>
 
-2. Synchronize pacman packaes:
+2. Select the mirrors for China:
+
+<dl><dd>
+<pre>
+$ <b>curl -L 'https://archlinux.org/mirrorlist/?country=CN&protocol=https' -o /etc/pacman.d/mirrorlist</b>
+</pre>
+</dd></dl>
+
+3. Synchronize pacman packaes:
 
 <dl><dd>
 <pre>
