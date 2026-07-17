@@ -1160,8 +1160,14 @@ poetry config virtualenvs.in-project true
 *
 
 [main]
-leftalt = f24
-rightalt = f24
+
+leftalt = layer(alt_layer)
+rightalt = layer(alt_layer)
+
+[alt_layer]
+
+space = f24
 ```
 
 3. `sudo systemctl restart keyd`
+4. Use `f24` key in i3 `bindsym`
