@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./LICENSE.txt)
-![Last Updated](https://img.shields.io/badge/Last_Updated-April_2026-02b532)
+![Last Updated](https://img.shields.io/badge/Last_Updated-July_2026-02b532)
 
 </div>
 
@@ -1157,3 +1157,25 @@ poetry config virtualenvs.in-project true
 1. Add `usbcore.autosuspend=-1 pcie_aspm=off i915.enable_psr=0` to `GRUB_CMDLINE_LINUX_DEFAULT` in `/etc/default/grub`
 2. `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 3. `reboot`
+
+### Playbook 13: Remap ALT key to something else
+
+1. `sudo pacman -S keyd`
+2. In `/etc/keyd/default.conf`:
+
+```
+[ids]
+*
+
+[main]
+
+leftalt = layer(alt_layer)
+rightalt = layer(alt_layer)
+
+[alt_layer]
+
+space = f24
+```
+
+3. `sudo systemctl restart keyd`
+4. Use `f24` key in i3 `bindsym`
